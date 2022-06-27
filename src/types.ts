@@ -4,7 +4,7 @@ export type FillColor = [string, string]
 /** 混合比例：[默认, 暗黑] */
 export type MixRatio = [number, number]
 
-export interface ButtonTabProps {
+export interface TagDefaultProps {
   /** 暗黑模式 */
   darkMode?: boolean
   /** 激活状态 */
@@ -18,7 +18,7 @@ export interface ButtonTabProps {
   /** 是否显示关闭图标 */
   closable?: boolean
 }
-export interface ChromeTabProps {
+export interface TagChromeProps {
   /** 暗黑模式 */
   darkMode?: boolean
   /** 激活状态 */
