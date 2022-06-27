@@ -1,7 +1,3 @@
-import ButtonTag from './components/ButtonTag.vue'
-import ChromeTag from './components/ChromeTag.vue'
+export { TagDefault } from '~/components/TagDefault'
+export { TagChrome } from '~/components/TagChrome'
 
-export {
-  ButtonTag,
-  ChromeTag,
-}
