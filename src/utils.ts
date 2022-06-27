@@ -42,8 +42,8 @@ export function getColorPalette(color: string, index: ColorIndex) {
  * @param color - 颜色
  */
 export function getAllColorPalette(color: string) {
-  const indexs: ColorIndex[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  return indexs.map(index => getColorPalette(color, index))
+  const colorIndexList: ColorIndex[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  return colorIndexList.map(index => getColorPalette(color, index))
 }
 
 /**
