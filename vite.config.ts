@@ -1,7 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
@@ -31,17 +30,6 @@ export default defineConfig({
         'pinia',
       ],
       dts: 'src/autoImports.d.ts',
-      dirs: [
-        'src/server/api',
-        'src/composables',
-        'src/stores',
-      ],
-      vueTemplate: true,
-    }),
-
-    // your plugin installation
-    Components({
-      dts: 'src/components.d.ts',
     }),
 
     // https://github.com/antfu/unocss
