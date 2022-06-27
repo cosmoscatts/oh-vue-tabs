@@ -9,7 +9,11 @@ export function useCssRender() {
 
   let style: CNode
 
-  function cssRender(selector: CSelector, props: CProperties, children: CNodeChildren = []) {
+  function cssRender(
+    selector: CSelector,
+    props: CProperties,
+    children: CNodeChildren = [],
+  ) {
     style = c(selector, props, children)
     style.render()
     style.mount()
