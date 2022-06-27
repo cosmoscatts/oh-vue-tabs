@@ -6,7 +6,7 @@ export type MixRatio = [number, number]
 
 export interface TagDefaultProps {
   /** 暗黑模式 */
-  darkMode?: boolean
+  isDark?: boolean
   /** 激活状态 */
   isActive?: boolean
   /** 主题颜色 */
@@ -20,7 +20,7 @@ export interface TagDefaultProps {
 }
 export interface TagChromeProps {
   /** 暗黑模式 */
-  darkMode?: boolean
+  isDark?: boolean
   /** 激活状态 */
   isActive?: boolean
   /** 主题颜色 */
