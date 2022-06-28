@@ -1,5 +1,6 @@
 import { CssRender } from 'css-render'
 import type { CNode, CNodeChildren, CProperties, CSelector } from 'css-render'
+import { onUnmounted, ref, unref } from 'vue'
 
 /**
  * use js to render css
