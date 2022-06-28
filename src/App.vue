@@ -9,7 +9,7 @@ function handleDarkMode() {
 </script>
 
 <template>
-  <div class="h-full p-24px text-14px bg-#f6f9f8" :class="{ '!bg-#101014 text-light': darkMode }">
+  <div class="h-full p-24px text-14px bg-#f6f9f8" :class="{ darkMode ? '!bg-[#101014] text-light': '' }">
     <div>
       <span class="pr-24px text-24px font-bold">暗黑模式</span>
       <input type="checkbox" :checked="darkMode" @change="handleDarkMode">
@@ -17,7 +17,7 @@ function handleDarkMode() {
     <h3 class="pb-24px text-24px font-bold">
       ButtonTab
     </h3>
-    <div class="tab-shadow pl-16px py-8px bg-white" :class="{ '!bg-dark text-white': darkMode }">
+    <div class="tab-shadow pl-16px py-8px bg-white" :class="{ darkMode ? '!bg-dark text-white': '' }">
       <SoftTagBar mode="default" :is-dark="darkMode">
         default
       </SoftTagBar>
@@ -28,7 +28,7 @@ function handleDarkMode() {
         no-close
       </SoftTagBar> -->
     </div>
-    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
+    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ darkMode ? '!bg-dark text-white': '' }">
       <!-- <SoftTagBar :is-dark="darkMode" primary-color="#5856D6">
         default
       </SoftTagBar>

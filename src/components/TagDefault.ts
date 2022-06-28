@@ -21,6 +21,9 @@ export const TagDefault = defineComponent({
       slots,
     },
   ) {
+    console.log({
+      isDark,
+    })
     const { bool: isHover, setTrue, setFalse } = useBoolean()
     const isIconActive = computed(() => isActive || unref(isHover))
     console.log(closable)
