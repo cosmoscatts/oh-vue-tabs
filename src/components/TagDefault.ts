@@ -1,12 +1,11 @@
 import type { DefineComponent } from 'vue'
 import { TagWidgetBtnClose } from './TagWidgetBtnClose'
+import { TagDefaultProps } from '~/options'
 
 export const TagDefault = defineComponent({
   name: 'TagDefault',
-  props: {
-
-  },
-  setup(props, ctx) {
+  props: TagDefaultProps,
+  setup(_props, _ctx) {
     const wrapperClass = ''
     return () => {
       return h(
