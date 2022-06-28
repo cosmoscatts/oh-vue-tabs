@@ -5,8 +5,9 @@ import { SoftBarProps } from '~/options'
 export const SoftTagBar = defineComponent({
   name: 'SoftTagBar',
   props: SoftBarProps,
-  setup(props) {
+  setup(props, { slots }) {
     const { mode, ...tagProps } = props
+    console.log(tagProps)
     const component = mode === 'chrome'
       ? TagChrome
       : TagDefault
@@ -17,6 +18,7 @@ export const SoftTagBar = defineComponent({
         {
           ...tagProps,
         },
+        slots,
       )
     }
   },

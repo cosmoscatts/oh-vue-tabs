@@ -14,13 +14,13 @@ export const TagWidgetBtnCloseProps = {
 } as const
 
 export const TagBarProps = {
-  darkMode: {
+  isDark: {
     type: Boolean,
-    require: true,
+    require: false,
   },
   isActive: {
     type: Boolean,
-    require: true,
+    require: false,
   },
   primaryColor: {
     type: String,
@@ -53,8 +53,6 @@ export const SoftBarProps = {
     type: String,
     require: true,
   },
-  props: {
-    type: Object,
-    require: true,
-  },
+  ...TagDefaultProps,
+  ...TagChromeProps,
 }
