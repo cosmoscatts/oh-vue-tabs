@@ -2,23 +2,23 @@
 import { SoftTagBar } from './index'
 import { useBoolean } from '~/composables'
 
-const { bool: darkMode, toggle } = useBoolean()
+const { bool: isDark, toggle } = useBoolean()
 function handleDarkMode() {
   toggle()
 }
 </script>
 
 <template>
-  <div class="h-full p-24px text-14px bg-[#f6f9f8]" :class="{ darkMode ? '!bg-[#101014] text-light': '' }">
+  <div class="h-full p-24px text-14px bg-[#f6f9f8]" :class="isDark ? '!bg-[#101014] text-light' : '' ">
     <div>
       <span class="pr-24px text-24px font-bold">暗黑模式</span>
-      <input type="checkbox" :checked="darkMode" @change="handleDarkMode">
+      <input type="checkbox" :checked="isDark" @change="handleDarkMode">
     </div>
     <h3 class="pb-24px text-24px font-bold">
       ButtonTab
     </h3>
-    <div class="tab-shadow pl-16px py-8px bg-white" :class="{ darkMode ? '!bg-dark text-white': '' }">
-      <SoftTagBar mode="default" :is-dark="darkMode">
+    <div class="tab-shadow pl-16px py-8px bg-white" :class="isDark ? '!bg-dark text-white' : '' ">
+      <SoftTagBar mode="default" :is-dark="isDark">
         default
       </SoftTagBar>
       <!-- <SoftTagBar :is-dark="darkMode" :is-active="true" class="ml-12px">
@@ -28,7 +28,7 @@ function handleDarkMode() {
         no-close
       </SoftTagBar> -->
     </div>
-    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ darkMode ? '!bg-dark text-white': '' }">
+    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="isDark ? '!bg-dark text-white' : '' ">
       <!-- <SoftTagBar :is-dark="darkMode" primary-color="#5856D6">
         default
       </SoftTagBar>
