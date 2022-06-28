@@ -23,7 +23,7 @@ export interface TagChromeProps extends TagProps {
 }
 
 export interface SoftTagBarProps extends TagDefaultProps, TagChromeProps {
-  mode: 'default' | 'chrome'
+  mode?: 'default' | 'chrome'
 }
 
 export interface TagButtonCloseProps {
