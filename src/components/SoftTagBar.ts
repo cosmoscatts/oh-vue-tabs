@@ -7,13 +7,17 @@ export const SoftTagBar = defineComponent({
   name: 'SoftTagBar',
   props: SoftBarProps,
   setup(props) {
-    const component: Component = props.mode === 'chrome'
+    const { mode, ...tagProps } = props
+    const component: Component = mode === 'chrome'
       ? TagChrome
       : TagDefault
 
     return () => {
       return h(
-        component,
+        'id',
+        {
+          ...tagProps,
+        },
       )
     }
   },
