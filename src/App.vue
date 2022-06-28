@@ -9,7 +9,7 @@ function handleDarkMode() {
 </script>
 
 <template>
-  <div class="h-full p-24px text-14px bg-#f6f9f8" :class="{ darkMode ? '!bg-[#101014] text-light': '' }">
+  <div class="h-full p-24px text-14px bg-[#f6f9f8]" :class="{ darkMode ? '!bg-[#101014] text-light': '' }">
     <div>
       <span class="pr-24px text-24px font-bold">暗黑模式</span>
       <input type="checkbox" :checked="darkMode" @change="handleDarkMode">
