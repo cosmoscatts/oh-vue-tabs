@@ -1,18 +1,20 @@
+import type { Component } from 'vue'
 import { TagDefault } from '~/components/TagDefault'
 import { TagChrome } from '~/components/TagChrome'
-import { Component } from 'vue'
+import { SoftBarProps } from '~/options'
 
 export const SoftTagBar = defineComponent({
   name: 'SoftTagBar',
-  props: {
-    mode: String,
-  },
+  props: SoftBarProps,
   setup(props) {
     const component: Component = props.mode === 'chrome'
       ? TagChrome
       : TagDefault
-    return () => ({
-      h(component),
-    })
+
+    return () => {
+      return h(
+        component,
+      )
+    }
   },
 })

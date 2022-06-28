@@ -47,3 +47,14 @@ export const TagDefaultProps = {
 export const TagChromeProps = {
   ...TagBarProps,
 } as const
+
+export const SoftBarProps = {
+  mode: {
+    type: String,
+    require: true,
+  },
+  props: {
+    type: Object,
+    require: true,
+  },
+}
