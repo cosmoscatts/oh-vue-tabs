@@ -1,7 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
 
@@ -17,19 +16,6 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
-    }),
-
-    // https://github.com/antfu/unplugin-auto-import
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        'vue/macros',
-        '@vueuse/head',
-        '@vueuse/core',
-        'pinia',
-      ],
-      dts: 'src/autoImports.d.ts',
     }),
 
     // https://github.com/antfu/unocss
