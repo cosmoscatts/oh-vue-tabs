@@ -27,7 +27,9 @@ export function getColorPalette(color: string, index: ColorIndex) {
 
   const isLight = index < 6
   const hsv = colord(color).toHsv()
-  const i = isLight ? lightColorCount + 1 - index : index - lightColorCount - 1
+  const i = isLight
+    ? lightColorCount + 1 - index
+    : index - lightColorCount - 1
 
   const newHsv: HsvColor = {
     h: getHue(hsv, i, isLight),
@@ -59,13 +61,17 @@ function getHue(hsv: HsvColor, i: number, isLight: boolean) {
     // 冷色调
     // 减淡变亮 色相顺时针旋转 更暖
     // 加深变暗 色相逆时针旋转 更冷
-    hue = isLight ? hsv.h - hueStep * i : hsv.h + hueStep * i
+    hue = isLight
+      ? hsv.h - hueStep * i
+      : hsv.h + hueStep * i
   }
   else {
     // 暖色调
     // 减淡变亮 色相逆时针旋转 更暖
     // 加深变暗 色相顺时针旋转 更冷
-    hue = isLight ? hsv.h + hueStep * i : hsv.h - hueStep * i
+    hue = isLight
+      ? hsv.h + hueStep * i
+      : hsv.h - hueStep * i
   }
   if (hue < 0)
     hue += 360
