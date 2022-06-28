@@ -1,0 +1,1 @@
+export { SoftTagBar } from '~/core'
