@@ -1,2 +1,2 @@
-export { SoftTagBar } from './components/SoftTagBar'
+export { SoftTagBar } from './core/SoftTagBar'
 
