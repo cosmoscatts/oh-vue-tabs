@@ -12,3 +12,38 @@ export const TagWidgetBtnCloseProps = {
     required: false,
   },
 } as const
+
+export const TagBarProps = {
+  darkMode: {
+    type: Boolean,
+    require: true,
+  },
+  isActive: {
+    type: Boolean,
+    require: true,
+  },
+  primaryColor: {
+    type: String,
+    require: false,
+  },
+  borderColor: {
+    type: String,
+    require: false,
+  },
+  darkBorderColor: {
+    type: String,
+    require: false,
+  },
+  closable: {
+    type: Boolean,
+    require: false,
+  },
+} as const
+
+export const TagDefaultProps = {
+  ...TagBarProps,
+} as const
+
+export const TagChromeProps = {
+  ...TagBarProps,
+} as const

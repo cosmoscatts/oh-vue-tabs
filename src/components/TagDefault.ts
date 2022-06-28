@@ -8,7 +8,6 @@ export const TagDefault = defineComponent({
   },
   setup(props, ctx) {
     const wrapperClass = ''
-
     return () => {
       return h(
         'div',
@@ -17,8 +16,19 @@ export const TagDefault = defineComponent({
 
         },
         [
-          h('span'),
-          h('span'),
+          h(
+            'span',
+            {
+
+            },
+            () => '',
+          ),
+          h(
+            TagWidgetBtnClose,
+            {
+
+            },
+          ),
         ],
       )
     }
