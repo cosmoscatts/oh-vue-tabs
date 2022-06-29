@@ -1,24 +1,29 @@
 <script setup lang="ts">
-import type { TagButtonCloseProps } from '~/types'
 import { EnumSoftTagBar as Enum } from '~/enum'
-
-interface Props extends TagButtonCloseProps {}
+import { useBoolean } from '~/composables'
 
 const {
   isActive = false,
   activeColor = Enum.primaryColor,
   defaultColor = Enum.defaultIconColor,
-} = defineProps<Props>()
+} = defineProps<{
+  isActive?: boolean
+  defaultColor?: string
+  activeColor?: string
+}>()
+const { bool: isHover, setTrue, setFalse } = useBoolean()
 </script>
 
 <template>
   <div
     flex justify-center items-center
     relative w-18px h-18px
+    @mouseenter="setTrue"
+    @mouseleave="setFalse"
   >
     <button
       :class="
-        isActive
+        isHover
           ? 'i-carbon-close-filled'
           : 'i-carbon-close'
       "

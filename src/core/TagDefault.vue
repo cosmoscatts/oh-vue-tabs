@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { computed, unref } from 'vue'
 import { addColorAlpha, useBoolean } from '~/composables'
-import type { TagDefaultProps } from '~/types'
 import { EnumSoftTagBar as Enum } from '~/enum'
 import TagButtonClose from '~/components/TagButtonClose.vue'
-
-interface Props extends TagDefaultProps {}
 
 const {
   isDark = false,
@@ -14,7 +11,14 @@ const {
   borderColor = Enum.borderColor,
   borderDarkColor = Enum.borderDarkColor,
   closable = true,
-} = defineProps<Props>()
+} = defineProps<{
+  isDark?: boolean
+  isActive?: boolean
+  primaryColor?: string
+  closable?: boolean
+  borderColor?: string
+  borderDarkColor?: string
+}>()
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
@@ -53,7 +57,7 @@ function handleClose(e: MouseEvent) {
     @mouseenter="setTrue"
     @mouseleave="setFalse"
   >
-    <span text-nowrap>
+    <span>
       <slot />
     </span>
     <TagButtonClose
