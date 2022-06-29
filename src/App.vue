@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, unref } from 'vue'
 import TagDefault from '~/core/TagDefault.vue'
+import TagChrome from '~/core/TagChrome.vue'
 
 const darkMode = ref(false)
 
@@ -29,16 +30,25 @@ function handleDarkMode() {
         no-close
       </TagDefault>
     </div>
-    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
-      <TagDefault mode="default" :is-dark="darkMode" primary-color="#5856D6" :inverted="true">
+    <div class="tab-shadow px-8px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
+      <TagChrome mode="default" :is-dark="darkMode" primary-color="#5856D6">
         default
-      </TagDefault>
-      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :inverted="true" :is-active="true" class="ml-12px">
+      </TagChrome>
+      <TagChrome :is-dark="darkMode" primary-color="#5856D6">
         active
-      </TagDefault>
-      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :closable="false" class="ml-12px" :inverted="true">
+      </TagChrome>
+      <TagChrome :is-dark="darkMode" primary-color="#5856D6" :closable="false">
         no-close
-      </TagDefault>
+      </TagChrome>
+      <TagChrome :is-dark="darkMode" primary-color="#5856D6" :is-active="true">
+        active
+      </TagChrome>
+      <TagChrome :is-dark="darkMode" primary-color="#5856D6">
+        active
+      </TagChrome>
+      <TagChrome :is-dark="darkMode" primary-color="#5856D6" :is-last="true">
+        active
+      </TagChrome>
     </div>
   </div>
 </template>

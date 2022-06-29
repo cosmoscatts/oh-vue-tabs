@@ -20,5 +20,6 @@ export interface TagChromeProps extends TagProps {
   hoverBgColor?: FillColor
   mixColor?: FillColor
   mixRatio?: MixRatio
+  isLast?: boolean
 }
 
