@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { EnumSoftTagBar as Enum } from '~/enum'
 import { useBoolean } from '~/composables'
 
@@ -6,15 +7,24 @@ interface Props {
   isActive?: boolean
   defaultColor?: string
   activeColor?: string
+  inverted?: boolean
 }
 
 const {
   isActive = false,
   activeColor = Enum.primaryColor,
   defaultColor = Enum.defaultIconColor,
+  inverted = false,
 } = defineProps<Props>()
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
+const buttonColor = computed(() => {
+  return inverted
+    ? 'white'
+    : isActive
+      ? activeColor
+      : defaultColor
+})
 </script>
 
 <template>
@@ -31,9 +41,7 @@ const { bool: isHover, setTrue, setFalse } = useBoolean()
           : 'i-carbon-close'
       "
       :style="{
-        color: isActive
-          ? activeColor
-          : defaultColor,
+        color: buttonColor,
       }"
       absolute w-16px h-16px
     />

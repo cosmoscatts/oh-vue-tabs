@@ -30,13 +30,13 @@ function handleDarkMode() {
       </TagDefault>
     </div>
     <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
-      <TagDefault mode="default" :is-dark="darkMode" primary-color="#5856D6">
+      <TagDefault mode="default" :is-dark="darkMode" primary-color="#5856D6" :inverted="true">
         default
       </TagDefault>
-      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :is-active="true" class="ml-12px">
+      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :inverted="true" :is-active="true" class="ml-12px">
         active
       </TagDefault>
-      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :closable="false" class="ml-12px">
+      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :closable="false" class="ml-12px" :inverted="true">
         no-close
       </TagDefault>
     </div>
