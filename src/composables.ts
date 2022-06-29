@@ -172,14 +172,7 @@ export function addColorAlpha(color: string, alpha: number) {
  * @param secondColor - 第二个颜色
  * @param ratio - 第二个颜色占比
  */
-export function mixColor(firstColor: string, secondColor: string, ratio: number) {
+export function useMixinColor(firstColor: string, secondColor: string, ratio: number) {
   return colord(firstColor).mix(secondColor, ratio).toHex()
 }
 
-/**
- * 是否是白颜色
- * @param color - 颜色
- */
-export function isWhiteColor(color: string) {
-  return colord(color).isEqual('#ffffff')
-}
