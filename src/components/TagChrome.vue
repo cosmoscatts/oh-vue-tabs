@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import TagButtonClose from './TagButtonClose.vue'
+import TagChromeShape from './TagChromeShape.vue'
 import { useBoolean } from '~/composables'
-import TagButtonClose from '~/components/TagButtonClose.vue'
-import TagChromeShape from '~/components/TagChromeShape.vue'
 import type { FillColor, MixRatio } from '~/types'
 
 interface Props {

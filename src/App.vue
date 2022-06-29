@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, unref } from 'vue'
-import TagDefault from '~/core/TagDefault.vue'
-import TagChrome from '~/core/TagChrome.vue'
+import TagDefault from '~/components/TagDefault.vue'
+import TagChrome from '~/components/TagChrome.vue'
 
 const darkMode = ref(false)
 

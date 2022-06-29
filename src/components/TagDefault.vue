@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, unref } from 'vue'
+import TagButtonClose from './TagButtonClose.vue'
 import { addColorAlpha, useBoolean } from '~/composables'
 import { EnumSoftTagBar as Enum } from '~/enum'
-import TagButtonClose from '~/components/TagButtonClose.vue'
 
 interface Props {
   isDark?: boolean
