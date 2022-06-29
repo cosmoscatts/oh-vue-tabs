@@ -28,9 +28,10 @@ const props = defineProps<{
 
 <template>
   <component
-    :is="props.mode === 'default'
+    :is="!props.mode || props.mode === 'default'
       ? TagDefault
-      : TagChrome"
+      : TagChrome
+    "
     v-bind="$props"
   />
 </template>
