@@ -29,36 +29,31 @@ const { bool: isHover, setTrue, setFalse } = useBoolean()
 const isTagActive = computed(() => isActive || unref(isHover))
 const tagStyle = computed(() => {
   if (!inverted) {
-    const _borderColor = isDark
-      ? borderDarkColor
-      : borderColor
-    if (!unref(isTagActive)) {
-      return {
-        borderColor: _borderColor,
-      }
+    const style: Record<string, string> = {
+      borderColor: unref(isTagActive)
+        ? addColorAlpha(primaryColor, 0.3)
+        : isDark
+          ? borderDarkColor
+          : borderColor,
     }
 
-    const primaryBorderColor = addColorAlpha(primaryColor, 0.3)
-    const style: Record<string, string> = {
-      color: primaryColor,
-      borderColor: primaryBorderColor,
-    }
+    if (unref(isTagActive))
+      style.color = primaryColor
+
     if (isActive)
       style.backgroundColor = addColorAlpha(primaryColor, isDark ? 0.15 : 0.1)
 
     return style
   }
   else {
-    const style: Record<string, string> = {
+    return {
       color: 'white',
+      backgroundColor: isActive
+        ? primaryColor
+        : unref(isHover)
+          ? addColorAlpha(primaryColor, 0.75)
+          : addColorAlpha(primaryColor, 0.5),
     }
-    const color = isActive
-      ? primaryColor
-      : isTagActive.value
-        ? addColorAlpha(primaryColor, 0.75)
-        : addColorAlpha(primaryColor, 0.5)
-    style.backgroundColor = color
-    return style
   }
 })
 function handleClose(e: MouseEvent) {
