@@ -1,3 +1,7 @@
-export { SoftTagBar } from '~/core'
+import TagChrome from './core/TagChrome.vue'
+import TagDefault from './core/TagDefault.vue'
 
-export * from '~/types'
+export {
+  TagChrome,
+  TagDefault,
+}

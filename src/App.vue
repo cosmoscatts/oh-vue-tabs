@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, unref } from 'vue'
-import SoftTagBar from '~/core/SoftTagBar.vue'
 import TagDefault from '~/core/TagDefault.vue'
 
 const darkMode = ref(false)
@@ -31,15 +30,15 @@ function handleDarkMode() {
       </TagDefault>
     </div>
     <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
-      <SoftTagBar mode="default" :is-dark="darkMode" primary-color="#5856D6">
+      <TagDefault mode="default" :is-dark="darkMode" primary-color="#5856D6">
         default
-      </SoftTagBar>
-      <SoftTagBar :is-dark="darkMode" primary-color="#5856D6" :is-active="true" class="ml-12px">
+      </TagDefault>
+      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :is-active="true" class="ml-12px">
         active
-      </SoftTagBar>
-      <SoftTagBar :is-dark="darkMode" primary-color="#5856D6" :closable="false" class="ml-12px">
+      </TagDefault>
+      <TagDefault :is-dark="darkMode" primary-color="#5856D6" :closable="false" class="ml-12px">
         no-close
-      </SoftTagBar>
+      </TagDefault>
     </div>
   </div>
 </template>

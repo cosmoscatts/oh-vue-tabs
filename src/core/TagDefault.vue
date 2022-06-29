@@ -4,6 +4,15 @@ import { addColorAlpha, useBoolean } from '~/composables'
 import { EnumSoftTagBar as Enum } from '~/enum'
 import TagButtonClose from '~/components/TagButtonClose.vue'
 
+interface Props {
+  isDark?: boolean
+  isActive?: boolean
+  primaryColor?: string
+  closable?: boolean
+  borderColor?: string
+  borderDarkColor?: string
+}
+
 const {
   isDark = false,
   isActive = false,
@@ -11,14 +20,7 @@ const {
   borderColor = Enum.borderColor,
   borderDarkColor = Enum.borderDarkColor,
   closable = true,
-} = defineProps<{
-  isDark?: boolean
-  isActive?: boolean
-  primaryColor?: string
-  closable?: boolean
-  borderColor?: string
-  borderDarkColor?: string
-}>()
+} = defineProps<Props>()
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()

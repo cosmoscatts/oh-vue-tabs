@@ -2,15 +2,18 @@
 import { EnumSoftTagBar as Enum } from '~/enum'
 import { useBoolean } from '~/composables'
 
+interface Props {
+  isActive?: boolean
+  defaultColor?: string
+  activeColor?: string
+}
+
 const {
   isActive = false,
   activeColor = Enum.primaryColor,
   defaultColor = Enum.defaultIconColor,
-} = defineProps<{
-  isActive?: boolean
-  defaultColor?: string
-  activeColor?: string
-}>()
+} = defineProps<Props>()
+
 const { bool: isHover, setTrue, setFalse } = useBoolean()
 </script>
 
