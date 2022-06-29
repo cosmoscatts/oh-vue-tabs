@@ -54,7 +54,9 @@ const tagStyle = computed(() => {
     }
     const color = isActive
       ? primaryColor
-      : addColorAlpha(primaryColor, isDark ? 0.45 : 0.4)
+      : isTagActive.value
+        ? addColorAlpha(primaryColor, 0.75)
+        : addColorAlpha(primaryColor, 0.5)
     style.backgroundColor = color
     return style
   }
