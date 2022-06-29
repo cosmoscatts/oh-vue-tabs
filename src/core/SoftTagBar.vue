@@ -4,10 +4,12 @@ import TagChrome from './TagChrome.vue'
 import TagDefault from './TagDefault.vue'
 import type { SoftTagBarProps } from '~/types'
 
+interface Props extends SoftTagBarProps {}
+
 const {
   mode = 'default',
   ...restProps
-} = defineProps<SoftTagBarProps>()
+} = defineProps<Props>()
 
 const component = computed(() => {
   return mode === 'default'

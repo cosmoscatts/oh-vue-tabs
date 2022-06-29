@@ -40,31 +40,6 @@ function handleDarkMode() {
         no-close
       </SoftTagBar>
     </div>
-    <!-- <h3 class="py-24px text-24px font-bold">
-      ChromeTab
-    </h3>
-    <div class="tab-shadow pl-16px py-8px bg-white" :class="{ '!bg-dark text-white': darkMode }">
-      <chrome-tab :dark-mode="darkMode">
-        default
-      </chrome-tab>
-      <chrome-tab :dark-mode="darkMode" :is-active="true">
-        active
-      </chrome-tab>
-      <chrome-tab :dark-mode="darkMode" :closable="false">
-        no-close
-      </chrome-tab>
-    </div>
-    <div class="tab-shadow px-16px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': darkMode }">
-      <chrome-tab :dark-mode="darkMode" primary-color="#5856D6">
-        default
-      </chrome-tab>
-      <chrome-tab :dark-mode="darkMode" primary-color="#5856D6" :is-active="true">
-        active
-      </chrome-tab>
-      <chrome-tab :dark-mode="darkMode" primary-color="#5856D6" :closable="false">
-        no-close
-      </chrome-tab>
-    </div> -->
   </div>
 </template>
 

@@ -2,11 +2,13 @@
 import type { TagButtonCloseProps } from '~/types'
 import { EnumSoftTagBar as Enum } from '~/enum'
 
+interface Props extends TagButtonCloseProps {}
+
 const {
   isActive = false,
   activeColor = Enum.primaryColor,
   defaultColor = Enum.defaultIconColor,
-} = defineProps<TagButtonCloseProps>()
+} = defineProps<Props>()
 </script>
 
 <template>

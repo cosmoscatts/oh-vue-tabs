@@ -5,6 +5,8 @@ import type { TagDefaultProps } from '~/types'
 import { EnumSoftTagBar as Enum } from '~/enum'
 import TagButtonClose from '~/components/TagButtonClose.vue'
 
+interface Props extends TagDefaultProps {}
+
 const {
   isDark = false,
   isActive = false,
@@ -12,7 +14,7 @@ const {
   borderColor = Enum.borderColor,
   borderDarkColor = Enum.borderDarkColor,
   closable = true,
-} = defineProps<TagDefaultProps>()
+} = defineProps<Props>()
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
