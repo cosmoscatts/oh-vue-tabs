@@ -10,22 +10,15 @@
     "vue3",
     "tagbar"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite --port 3333 --open",
-    "build": "pkgroll --watch",
+    "build": "pnpm run typecheck && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -43,7 +36,6 @@
     "@unocss/preset-icons": "^0.41.2",
     "@unocss/preset-wind": "^0.41.2",
     "@vitejs/plugin-vue": "^2.3.3",
-    "pkgroll": "^1.3.1",
     "typescript": "^4.7.4",
     "unocss": "^0.41.2",
     "vite": "^2.9.13",
