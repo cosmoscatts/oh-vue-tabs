@@ -1,6 +1,6 @@
 {
   "name": "soft-tagbar",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "tag view component of two styles, default & chrome.",
   "main": "./dist/index.umd.js",
