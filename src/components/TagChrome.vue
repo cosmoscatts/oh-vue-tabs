@@ -22,7 +22,7 @@ const {
   primaryColor = '#1890ff',
   closable = true,
   bgColor = ['#ffffff', '#18181c'],
-  hoverBgColor = ['#dee1e6', '#3f3c37'],
+  hoverBgColor = ['#dee1e6', '#2D2D2D'],
   mixColor = ['#ffffff', '#000'],
   mixRatio = [0.13, 0.35],
   isLast = false,
@@ -66,7 +66,7 @@ function handleClose(e: MouseEvent) {
       absolute right="[-2px]" z-2 w-20px scale-x-5 h-16px bg="[#1f2225]" op-100 transition="opacity 0.3s ease-in-out"
       :class="{
         '!op-0': isHover || isActive || isLast,
-        '!bg-[rgba(255,255,255,0.9)]': isDark,
+        '!bg-[#595959]': isDark,
       }"
     />
   </div>

@@ -20,7 +20,7 @@ const {
   isHover = false,
   primaryColor = '#1890ff',
   bgColor = ['#ffffff', '#18181c'],
-  hoverBgColor = ['#dee1e6', '#333333'],
+  hoverBgColor = ['#dee1e6', '#2D2D2D'],
   mixColor = ['#ffffff', '#000000'],
   mixRatio = [0.2, 0.3],
 } = defineProps<Props>()
