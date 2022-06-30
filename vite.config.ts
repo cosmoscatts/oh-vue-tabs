@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
+import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,6 +33,16 @@ export default defineConfig({
         }),
         presetWind(),
       ],
+    }),
+
+    dts({
+      include: ['./src/types.ts', './src/components/TagDefault.vue', './src/components/TagChrome.vue'],
+      beforeWriteFile(filePath, content) {
+        return {
+          filePath: filePath.replace('/dist/src/', '/dist/'),
+          content,
+        }
+      },
     }),
   ],
 })
