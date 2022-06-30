@@ -15,7 +15,7 @@ export default defineConfig({
 
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/],
+      include: [/\.vue$/],
       reactivityTransform: true,
     }),
 
@@ -36,7 +36,7 @@ export default defineConfig({
     }),
 
     dts({
-      include: ['./src/types.ts', './src/components/TagDefault.vue', './src/components/TagChrome.vue'],
+      include: ['./src/index.ts',],
       beforeWriteFile(filePath, content) {
         return {
           filePath: filePath.replace('/dist/src/', '/dist/'),
