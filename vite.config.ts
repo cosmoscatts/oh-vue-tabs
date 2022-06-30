@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
-import dts from 'vite-plugin-dts'
+// import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,31 +32,31 @@ export default defineConfig({
       ],
     }),
 
-    dts({
-      include: ['./src/index.ts'],
-      beforeWriteFile(filePath, content) {
-        return {
-          filePath: filePath.replace('/dist/src/', '/dist/'),
-          content,
-        }
-      },
-    }),
+    // dts({
+    //   include: ['./src/index.ts'],
+    //   beforeWriteFile(filePath, content) {
+    //     return {
+    //       filePath: filePath.replace('/dist/src/', '/dist/'),
+    //       content,
+    //     }
+    //   },
+    // }),
   ],
 
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'SoftTagbar',
-      fileName: 'index'
-    },
-    rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue'
-        }
-      }
-    }
-  }
+  // build: {
+  //   lib: {
+  //     entry: resolve(__dirname, 'src/index.ts'),
+  //     name: 'SoftTagbar',
+  //     fileName: 'index'
+  //   },
+  //   rollupOptions: {
+  //     external: ['vue'],
+  //     output: {
+  //       globals: {
+  //         vue: 'Vue'
+  //       }
+  //     }
+  //   }
+  // }
 })
 
