@@ -22,9 +22,6 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss({
-      shortcuts: {
-        'icon-btn': 'op30 hover:op100]',
-      },
       presets: [
         presetAttributify(),
         presetUno(),
