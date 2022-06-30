@@ -4,7 +4,7 @@
   "private": false,
   "description": "tag view component of two styles, default & chrome.",
   "bugs": {
-    "url": "https://github.com/antfu/vue-starport/issues"
+    "url": "https://github.com/faitsse/soft-tagbar/issues"
   },
   "keywords": [
     "vue3",
@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "dev": "vite --port 3333 --open",
-    "build": "pkgroll",
+    "build": "pkgroll --watch",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
