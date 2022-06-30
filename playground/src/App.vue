@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref, unref } from 'vue'
-import { SoftTagBar } from '../../src'
+import { TagDefault, TagChrome  } from 'soft-tagbar'
 
 const darkMode = ref(false)
 
@@ -77,4 +77,4 @@ body,
 .tab-shadow {
   box-shadow: 0 1px 2px rgb(0 21 41 / 8%);
 }
-</style>
+</style> -->
