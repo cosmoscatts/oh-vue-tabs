@@ -1,4 +1,4 @@
-import path from 'path'
+import { resolve} from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
@@ -9,7 +9,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
 
@@ -33,7 +33,7 @@ export default defineConfig({
     }),
 
     dts({
-      include: ['./src/index.ts',],
+      include: ['./src/index.ts'],
       beforeWriteFile(filePath, content) {
         return {
           filePath: filePath.replace('/dist/src/', '/dist/'),
@@ -42,5 +42,21 @@ export default defineConfig({
       },
     }),
   ],
+
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'SoftTagbar',
+      fileName: 'index'
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        globals: {
+          vue: 'Vue'
+        }
+      }
+    }
+  }
 })
 
