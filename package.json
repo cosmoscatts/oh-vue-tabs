@@ -1,6 +1,6 @@
 {
   "name": "@faitsse/soft-tagbar",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "tag view component of two styles, default & chrome.",
   "bugs": {
@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.41.2",
-    "@vueuse/core": "^8.7.5",
     "colord": "^2.9.2",
     "vue": "^3.2.37"
   },
