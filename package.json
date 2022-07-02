@@ -1,10 +1,10 @@
 {
-  "name": "@faitsse/soft-tagbar",
-  "version": "0.4.5",
+  "name": "@dudx/soft-tagbar",
+  "version": "1.0.1",
   "private": false,
   "description": "tag view component of two styles, default & chrome.",
   "bugs": {
-    "url": "https://github.com/faitsse/soft-tagbar/issues"
+    "url": "https://github.com/dud9/soft-tagbar/issues"
   },
   "keywords": [
     "vue3",
@@ -18,12 +18,10 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite --port 3333 --open",
-    "build": "pnpm run typecheck && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "typecheck": "vue-tsc --noEmit",
-    "publish": "pnpm publish --access public"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@unocss/reset": "^0.41.2",
