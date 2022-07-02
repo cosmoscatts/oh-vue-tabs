@@ -22,7 +22,7 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss({
-      mode: 'vue-scoped',
+      mode: 'dist-chunk',
       presets: [
         presetAttributify(),
         presetUno(),
