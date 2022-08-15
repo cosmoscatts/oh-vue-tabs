@@ -1,16 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify/json': ^2.1.90
-  '@types/node': ^18.7.2
+  '@iconify/json': ^2.1.92
+  '@types/node': ^18.7.3
   '@unocss/preset-icons': ^0.45.6
   '@unocss/preset-wind': ^0.45.6
   '@unocss/reset': ^0.45.6
-  '@vitejs/plugin-vue': ^3.0.2
+  '@vitejs/plugin-vue': ^3.0.3
   colord: ^2.9.3
   typescript: ^4.7.4
   unocss: ^0.45.6
-  vite: ^3.0.6
+  vite: ^3.0.7
   vite-plugin-dts: ^1.4.1
   vue: ^3.2.37
   vue-tsc: ^0.40.1
@@ -21,15 +21,15 @@ dependencies:
   vue: registry.npmmirror.com/vue/3.2.37
 
 devDependencies:
-  '@iconify/json': registry.npmmirror.com/@iconify/json/2.1.90
-  '@types/node': registry.npmmirror.com/@types/node/18.7.2
+  '@iconify/json': registry.npmmirror.com/@iconify/json/2.1.92
+  '@types/node': registry.npmmirror.com/@types/node/18.7.3
   '@unocss/preset-icons': registry.npmmirror.com/@unocss/preset-icons/0.45.6
   '@unocss/preset-wind': registry.npmmirror.com/@unocss/preset-wind/0.45.6
-  '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.0.2_vite@3.0.6+vue@3.2.37
+  '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.0.3_vite@3.0.7+vue@3.2.37
   typescript: registry.npmmirror.com/typescript/4.7.4
-  unocss: registry.npmmirror.com/unocss/0.45.6_vite@3.0.6
-  vite: registry.npmmirror.com/vite/3.0.6
-  vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/1.4.1_vite@3.0.6
+  unocss: registry.npmmirror.com/unocss/0.45.6_vite@3.0.7
+  vite: registry.npmmirror.com/vite/3.0.7
+  vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/1.4.1_vite@3.0.7
   vue-tsc: registry.npmmirror.com/vue-tsc/0.40.1_typescript@4.7.4
 
 packages:
@@ -83,10 +83,10 @@ packages:
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.16.7
       to-fast-properties: registry.npmmirror.com/to-fast-properties/2.0.0
 
-  registry.npmmirror.com/@iconify/json/2.1.90:
-    resolution: {integrity: sha512-PLD493JwyJ9+fRmT1eN0BArUZJW7hxo74Jo3DSJyWPeKUHo4lHezfPw4L2T2JN7xolrRcWDkjmVWH4vGKR4byA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/json/-/json-2.1.90.tgz}
+  registry.npmmirror.com/@iconify/json/2.1.92:
+    resolution: {integrity: sha512-8JiOBg3UXpl4Rf6m0H+lxDzLU/3dGeqNhbKcFbXgK9wr1MMDxFK4w0Bzi3bzRDRcc169OI8fQ1/2JHc7Idt66w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/json/-/json-2.1.92.tgz}
     name: '@iconify/json'
-    version: 2.1.90
+    version: 2.1.92
     dependencies:
       '@iconify/types': registry.npmmirror.com/@iconify/types/1.1.0
       pathe: registry.npmmirror.com/pathe/0.3.3
@@ -301,10 +301,10 @@ packages:
     version: 12.20.24
     dev: true
 
-  registry.npmmirror.com/@types/node/18.7.2:
-    resolution: {integrity: sha512-ce7MIiaYWCFv6A83oEultwhBXb22fxwNOQf5DIxWA4WXvDQ7K+L0fbWl/YOfCzlR5B/uFkSnVBhPcOfOECcWvA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.7.2.tgz}
+  registry.npmmirror.com/@types/node/18.7.3:
+    resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.7.3.tgz}
     name: '@types/node'
-    version: 18.7.2
+    version: 18.7.3
     dev: true
 
   registry.npmmirror.com/@unocss/cli/0.45.6:
@@ -467,7 +467,7 @@ packages:
       '@unocss/core': registry.npmmirror.com/@unocss/core/0.45.6
     dev: true
 
-  registry.npmmirror.com/@unocss/vite/0.45.6_vite@3.0.6:
+  registry.npmmirror.com/@unocss/vite/0.45.6_vite@3.0.7:
     resolution: {integrity: sha512-6FcSoOWaciJCO0Bnhv001/9HTvO2ye1E/VX+Ey7JZg4ulltyhiszounRSxzBaflO2KDP/tE5O/K2iHywyHRrLg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@unocss/vite/-/vite-0.45.6.tgz}
     id: registry.npmmirror.com/@unocss/vite/0.45.6
     name: '@unocss/vite'
@@ -483,20 +483,20 @@ packages:
       '@unocss/scope': registry.npmmirror.com/@unocss/scope/0.45.6
       '@unocss/transformer-directives': registry.npmmirror.com/@unocss/transformer-directives/0.45.6
       magic-string: registry.npmmirror.com/magic-string/0.26.2
-      vite: registry.npmmirror.com/vite/3.0.6
+      vite: registry.npmmirror.com/vite/3.0.7
     dev: true
 
-  registry.npmmirror.com/@vitejs/plugin-vue/3.0.2_vite@3.0.6+vue@3.2.37:
-    resolution: {integrity: sha512-LAqb+tibmsKmSbxBzsMqWVJe6gDE4BDmFLjIzk4YdHgeiRCTokPbK8yRB3dRxDRwNk4IFwCFVE6+WP+YM0mbJg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-3.0.2.tgz}
-    id: registry.npmmirror.com/@vitejs/plugin-vue/3.0.2
+  registry.npmmirror.com/@vitejs/plugin-vue/3.0.3_vite@3.0.7+vue@3.2.37:
+    resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-3.0.3.tgz}
+    id: registry.npmmirror.com/@vitejs/plugin-vue/3.0.3
     name: '@vitejs/plugin-vue'
-    version: 3.0.2
+    version: 3.0.3
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite/3.0.6
+      vite: registry.npmmirror.com/vite/3.0.7
       vue: registry.npmmirror.com/vue/3.2.37
     dev: true
 
@@ -1916,7 +1916,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  registry.npmmirror.com/unocss/0.45.6_vite@3.0.6:
+  registry.npmmirror.com/unocss/0.45.6_vite@3.0.7:
     resolution: {integrity: sha512-ipU1kB2nbNvfh2O6u7qJ/zBwXvl/sRNlc+/dDWRCKu2feMnyR9g/4Vnw024RS8X+Jr7NN4eiGSzqMLoPoT6XOA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unocss/-/unocss-0.45.6.tgz}
     id: registry.npmmirror.com/unocss/0.45.6
     name: unocss
@@ -1943,7 +1943,7 @@ packages:
       '@unocss/transformer-compile-class': registry.npmmirror.com/@unocss/transformer-compile-class/0.45.6
       '@unocss/transformer-directives': registry.npmmirror.com/@unocss/transformer-directives/0.45.6
       '@unocss/transformer-variant-group': registry.npmmirror.com/@unocss/transformer-variant-group/0.45.6
-      '@unocss/vite': registry.npmmirror.com/@unocss/vite/0.45.6_vite@3.0.6
+      '@unocss/vite': registry.npmmirror.com/@unocss/vite/0.45.6_vite@3.0.7
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -1964,7 +1964,7 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  registry.npmmirror.com/vite-plugin-dts/1.4.1_vite@3.0.6:
+  registry.npmmirror.com/vite-plugin-dts/1.4.1_vite@3.0.7:
     resolution: {integrity: sha512-jo7E4ZeheD2o48oGiI3EygPbej7ZkGFHg3GVTt7Wuo6NgzThLvuzGGuduaFpnhJOGi1piDFsu6oui/wDKIIORQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-dts/-/vite-plugin-dts-1.4.1.tgz}
     id: registry.npmmirror.com/vite-plugin-dts/1.4.1
     name: vite-plugin-dts
@@ -1980,15 +1980,15 @@ packages:
       fast-glob: registry.npmmirror.com/fast-glob/3.2.11
       fs-extra: registry.npmmirror.com/fs-extra/10.1.0
       ts-morph: registry.npmmirror.com/ts-morph/14.0.0
-      vite: registry.npmmirror.com/vite/3.0.6
+      vite: registry.npmmirror.com/vite/3.0.7
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/vite/3.0.6:
-    resolution: {integrity: sha512-pjfsWIzfUlQME/VAmU6SsjdHkTt6WAHysuqPkHDcjzNu6IGtxDSZ/VfRYOwHaCqX4M3Ivz0kxuSfAPM6gAIX+w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.0.6.tgz}
+  registry.npmmirror.com/vite/3.0.7:
+    resolution: {integrity: sha512-dILhvKba1mbP1wCezVQx/qhEK7/+jVn9ciadEcyKMMhZpsuAi/eWZfJRMkmYlkSFG7Qq9NvJbgFq4XOBxugJsA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.0.7.tgz}
     name: vite
-    version: 3.0.6
+    version: 3.0.7
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
