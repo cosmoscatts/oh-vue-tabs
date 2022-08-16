@@ -24,18 +24,18 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unocss/reset": "^0.45.6",
+    "@unocss/reset": "^0.45.7",
     "colord": "^2.9.3",
     "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@iconify/json": "^2.1.92",
-    "@types/node": "^18.7.3",
-    "@unocss/preset-icons": "^0.45.6",
-    "@unocss/preset-wind": "^0.45.6",
+    "@iconify/json": "^2.1.93",
+    "@types/node": "^18.7.5",
+    "@unocss/preset-icons": "^0.45.7",
+    "@unocss/preset-wind": "^0.45.7",
     "@vitejs/plugin-vue": "^3.0.3",
     "typescript": "^4.7.4",
-    "unocss": "^0.45.6",
+    "unocss": "^0.45.7",
     "vite": "^3.0.7",
     "vite-plugin-dts": "^1.4.1",
     "vue-tsc": "^0.40.1"
