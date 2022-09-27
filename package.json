@@ -4,7 +4,7 @@
   "private": false,
   "description": "tag view component of two styles, default & chrome.",
   "bugs": {
-    "url": "https://github.com/dud9/soft-tagbar/issues"
+    "url": "https://github.com/cosmoscatts/soft-tagbar/issues"
   },
   "keywords": [
     "vue3",
