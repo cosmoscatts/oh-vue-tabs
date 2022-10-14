@@ -45,18 +45,15 @@ function pickColor(colorId: number) {
     <div flex items-center h-50px mt-20px>
       <h2 font-bold text-2xl>Colors</h2>
       <ul flex justify-between gap-x-4 ml-40px>
-      <li
-        v-for="(color, i) in THEME_COLORS"
-        :key="`${i}-color`"
-        w-6 h-6 rounded text-white cursor-pointer
-        :style="{ backgroundColor: color }"
-        @click="pickColor(i)"
-      >
-        <div v-show="pickedColorId === i" w-full h-full flex justify-center items-center>
-          <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9L13 24z"/></svg>
-        </div>
-      </li>
-    </ul>
+        <li v-for="(color, i) in THEME_COLORS" :key="`${i}-color`" w-6 h-6 rounded text-white cursor-pointer
+          :style="{ backgroundColor: color }" @click="pickColor(i)">
+          <div v-show="pickedColorId === i" w-full h-full flex justify-center items-center>
+            <svg width="1em" height="1em" viewBox="0 0 32 32">
+              <path fill="currentColor" d="m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9L13 24z"></path>
+            </svg>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <h2 text-2xl font-bold mt-30px>Button Tabs</h2>
@@ -79,7 +76,7 @@ function pickColor(colorId: number) {
     </div>
 
     <h2 text-2xl font-bold mt-30px>Chrome Tabs</h2>
-    <div class="tab"  bg="white dark:dark">
+    <div class="tab" bg="white dark:dark">
       <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor">
         default
       </TabChrome>
