@@ -8,6 +8,7 @@ specifiers:
   '@unocss/reset': ^0.45.29
   '@vitejs/plugin-vue': ^3.1.2
   colord: ^2.9.3
+  cross-env: ^7.0.3
   typescript: ^4.8.4
   unocss: ^0.45.29
   vite: ^3.1.8
@@ -26,6 +27,7 @@ devDependencies:
   '@unocss/preset-icons': registry.npmmirror.com/@unocss/preset-icons/0.45.29
   '@unocss/preset-wind': registry.npmmirror.com/@unocss/preset-wind/0.45.29
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.1.2_vite@3.1.8+vue@3.2.40
+  cross-env: registry.npmmirror.com/cross-env/7.0.3
   typescript: registry.npmmirror.com/typescript/4.8.4
   unocss: registry.npmmirror.com/unocss/0.45.29_vite@3.1.8
   vite: registry.npmmirror.com/vite/3.1.8
@@ -868,6 +870,16 @@ packages:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/consola/-/consola-2.15.3.tgz}
     name: consola
     version: 2.15.3
+    dev: true
+
+  registry.npmmirror.com/cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cross-env/-/cross-env-7.0.3.tgz}
+    name: cross-env
+    version: 7.0.3
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: registry.npmmirror.com/cross-spawn/7.0.3
     dev: true
 
   registry.npmmirror.com/cross-spawn/7.0.3:
