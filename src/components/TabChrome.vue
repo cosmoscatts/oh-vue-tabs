@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Close from './Close.vue'
 import ChromeShape from './ChromeShape.vue'
-import { useBoolean } from '~/composables'
+import { useBoolean, ColorMap } from '~/composables'
 import type { FillColor, MixRatio } from '~/index'
 
 interface Props {
@@ -19,11 +19,11 @@ interface Props {
 const {
   isDark = false,
   isActive = false,
-  primaryColor = '#1890ff',
+  primaryColor = ColorMap.primaryColor,
   closable = true,
-  bgColor = ['#ffffff', '#18181c'],
-  hoverBgColor = ['#dee1e6', '#2D2D2D'],
-  mixColor = ['#ffffff', '#000'],
+  bgColor = ColorMap.chromeBgColor,
+  hoverBgColor = ColorMap.chromeHoverBgColor,
+  mixColor = ColorMap.chromeMixColor,
   mixRatio = [0.13, 0.35],
   isLast = false,
 } = defineProps<Props>()

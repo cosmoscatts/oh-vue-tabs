@@ -19,9 +19,9 @@ const {
   isActive = false,
   isHover = false,
   primaryColor = ColorMap.primaryColor,
-  bgColor = ['#ffffff', '#18181c'],
-  hoverBgColor = ['#dee1e6', '#2D2D2D'],
-  mixColor = ['#ffffff', '#000000'],
+  bgColor = ColorMap.chromeBgColor,
+  hoverBgColor = ColorMap.chromeHoverBgColor,
+  mixColor = ColorMap.chromeMixColor,
   mixRatio = [0.2, 0.3],
 } = defineProps<Props>()
 

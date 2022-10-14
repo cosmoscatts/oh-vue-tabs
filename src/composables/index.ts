@@ -17,10 +17,14 @@ export function useBoolean(initValue = false) {
   }
 }
 
-export enum ColorMap {
-  primaryColor = '#377BB5',
-  defaultIconColor = '#9ca3af',
-  borderColor = '#e5e7eb',
-  borderDarkColor = '#ffffff3d',
+export const ColorMap = {
+  primaryColor : '#377BB5',
+  defaultIconColor : '#9ca3af',
+  borderColor : '#e5e7eb',
+  borderDarkColor : '#ffffff3d',
+
+  chromeBgColor : ['#ffffff', '#18181c'],
+  chromeHoverBgColor : ['#dee1e6', '#2D2D2D'],
+  chromeMixColor : ['#ffffff', '#000000'],
 }
 

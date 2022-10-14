@@ -1,60 +1,108 @@
 <script setup lang="ts">
-import { ref, unref } from 'vue'
+import { ref, computed, watch } from 'vue'
 import TabButton from '~/components/TabButton.vue'
 import TabChrome from '~/components/TabChrome.vue'
 
-const dark = ref(false)
+const isDark = ref(false)
 
-function handleDarkMode() {
-  dark.value = !unref(dark)
+const setMode2Body = (mode: boolean) => {
+  if (mode)
+    document.querySelector('html')!.setAttribute('class', 'dark')
+  else document.querySelector('html')!.removeAttribute('class')
+}
+
+watch(isDark, setMode2Body)
+
+const toggleDark = () => isDark.value = !isDark.value
+
+const THEME_COLORS = [
+  '#377BB5',
+  '#CA3832',
+  '#EE8732',
+  '#9C5BDE',
+  '#43912B'
+]
+const pickedColorId = ref(0)
+const pickedColor = computed(() => THEME_COLORS[pickedColorId.value])
+
+function pickColor(colorId: number) {
+  pickedColorId.value = colorId
 }
 </script>
 
 <template>
-  <div class="h-full p-24px text-18px bg-#f6f9f8" :class="{ '!bg-#101014 text-light': dark }">
-    <div>
-      <span class="pr-24px text-24px font-bold">暗黑模式</span>
-      <input type="checkbox" :checked="dark" @change="handleDarkMode">
+  <div h-screen w-70vw bg-transparent mx-a text-18px>
+    <div flex="~ gap2" items-center px8 pt8 pb2>
+      <h1 text="4xl primary" font="bold italic">
+        Oh Vue Tabs
+      </h1>
+      <div flex-auto />
+      <a icon-btn i-carbon-logo-github href="https://github.com/cosmoscatts/oh-vue-tabs" target="_blank"
+        title="GitHub" />
+      <button icon-btn i-carbon-sun dark:i-carbon-moon @click="toggleDark" />
     </div>
-    <h3 class="pb-24px text-24px font-bold">
-      ButtonTab
-    </h3>
-    <div class="tab-shadow pl-16px py-8px bg-white" :class="{ '!bg-dark text-white': dark }">
-      <TabButton :is-dark="dark">
+
+    <div flex items-center h-50px mt-20px>
+      <h2 font-bold text-2xl>Colors</h2>
+      <ul flex justify-between gap-x-4 ml-40px>
+      <li
+        v-for="(color, i) in THEME_COLORS"
+        :key="`${i}-color`"
+        w-6 h-6 rounded text-white cursor-pointer
+        :style="{ backgroundColor: color }"
+        @click="pickColor(i)"
+      >
+        <div v-show="pickedColorId === i" w-full h-full flex justify-center items-center>
+          <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9L13 24z"/></svg>
+        </div>
+      </li>
+    </ul>
+    </div>
+
+    <h2 text-2xl font-bold mt-30px>Button Tabs</h2>
+    <div class="tab" bg="white dark:dark" flex items-center gap-x-3>
+      <TabButton :is-dark="isDark" :primary-color="pickedColor">
         default
       </TabButton>
-      <TabButton :is-dark="dark" :is-active="true" class="ml-12px">
+      <TabButton :is-dark="isDark" :is-active="true" :primary-color="pickedColor">
         active
       </TabButton>
-      <TabButton :is-dark="dark" class="ml-12px">
+      <TabButton :is-dark="isDark" :closable="false" :primary-color="pickedColor">
         no-close
+      </TabButton>
+      <TabButton :is-dark="isDark" :primary-color="pickedColor">
+        default2
+      </TabButton>
+      <TabButton :is-dark="isDark" :primary-color="pickedColor">
+        default3
       </TabButton>
     </div>
-    <div class="tab-shadow px-8px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': dark }">
-      <TabChrome mode="default" :is-dark="dark" primary-color="#5856D6">
+
+    <h2 text-2xl font-bold mt-30px>Chrome Tabs</h2>
+    <div class="tab"  bg="white dark:dark">
+      <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor">
         default
       </TabChrome>
-      <TabChrome :is-dark="dark" primary-color="#5856D6">
+      <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor" :is-active="true">
         active
       </TabChrome>
-      <TabChrome :is-dark="dark" primary-color="#5856D6" :closable="false">
+      <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor" :closable="false">
         no-close
       </TabChrome>
-      <TabChrome :is-dark="dark" primary-color="#5856D6" :is-active="true">
-        active
+      <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor">
+        default2
       </TabChrome>
-      <TabChrome :is-dark="dark" primary-color="#5856D6">
-        active
-      </TabChrome>
-      <TabChrome :is-dark="dark" primary-color="#5856D6" :is-last="true">
-        active
+      <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor" :is-last="true">
+        default3
       </TabChrome>
     </div>
   </div>
 </template>
 
 <style scoped>
-.tab-shadow {
+.tab {
+  height: 50px;
+  padding: 8px 16px;
   box-shadow: 0 1px 2px rgb(0 21 41 / 8%);
 }
 </style>
