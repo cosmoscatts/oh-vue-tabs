@@ -27,22 +27,13 @@ const buttonColor = computed(() => {
 </script>
 
 <template>
-  <div
-    flex justify-center items-center
-    relative w-18px h-18px
-    @mouseenter="setTrue"
-    @mouseleave="setFalse"
-  >
-    <button
-      :class="
-        isHover
-          ? 'i-carbon-close-filled'
-          : 'i-carbon-close'
-      "
-      :style="{
+  <div flex justify-center items-center relative w-18px h-18px @mouseenter="setTrue" @mouseleave="setFalse">
+    <button :class="
+      isHover
+        ? 'i-carbon-close-filled'
+        : 'i-carbon-close'
+    " :style="{
         color: buttonColor,
-      }"
-      absolute w-16px h-16px
-    />
+      }" absolute w-16px h-16px />
   </div>
 </template>

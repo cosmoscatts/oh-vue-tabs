@@ -65,24 +65,12 @@ function handleClose(e: MouseEvent) {
 </script>
 
 <template>
-  <div
-    relative h-30px 
-    flex-inline justify-center items-center
-    px-14px rounded-2px cursor-pointer
-    :style="tabStyle"
-    :class="{ 'border-1 border-solid': !inverted }"
-    @mouseenter="setTrue"
-    @mouseleave="setFalse"
-  >
+  <div relative h-30px flex-inline justify-center items-center px-14px rounded-2px cursor-pointer :style="tabStyle"
+    :class="{ 'border-1 border-solid': !inverted }" @mouseenter="setTrue" @mouseleave="setFalse">
     <span>
       <slot />
     </span>
-    <Close
-      v-if="closable" pl-10px
-      :is-active="isTabActive"
-      :inverted="inverted"
-      :active-color="primaryColor"
-      @click="handleClose"
-    />
+    <Close v-if="closable" pl-10px :is-active="isTabActive" :inverted="inverted" :active-color="primaryColor"
+      @click="handleClose" />
   </div>
 </template>
