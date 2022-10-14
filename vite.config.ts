@@ -1,11 +1,16 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Unocss from 'unocss/vite'
-import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
 import dts from 'vite-plugin-dts'
+import Unocss from 'unocss/vite'
+import { 
+  presetAttributify, 
+  presetIcons, 
+  presetUno, 
+  presetWind 
+} from 'unocss'
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -15,12 +20,17 @@ export default defineConfig({
 
   plugins: [
     Vue({
-      include: [/\.vue$/],
       reactivityTransform: true,
     }),
-
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
+    dts({
+      include: ['./src/index.ts', './src/components/TabButton.vue', './src/components/TabChrome.vue'],
+      beforeWriteFile(filePath, content) {
+        return {
+          filePath: filePath.replace('/dist/src/', '/dist/'),
+          content,
+        }
+      },
+    }),
     Unocss({
       mode: 'dist-chunk',
       presets: [
@@ -31,15 +41,13 @@ export default defineConfig({
         }),
         presetWind(),
       ],
-    }),
-
-    dts({
-      include: ['./src/index.ts', './src/components/TagChrome.vue', './src/components/TagDefault.vue'],
-      beforeWriteFile(filePath, content) {
-        return {
-          filePath: filePath.replace('/dist/src/', '/dist/'),
-          content,
-        }
+      theme: {
+        fontFamily: {
+          self: 'CMU Sans Serif, HKST',
+        },
+        colors: {
+          primary: '#377BB5',
+        },
       },
     }),
   ],
@@ -47,7 +55,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'SoftTagbar',
+      name: 'OhVueTabs',
       fileName: 'index'
     },
     rollupOptions: {

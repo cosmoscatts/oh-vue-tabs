@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useMixinColor } from '~/composables'
-import type { FillColor, MixRatio } from '~/types'
+import { useMixinColor, ColorMap } from '~/composables'
+import type { FillColor, MixRatio } from '~/index'
 
 interface Props {
   isDark?: boolean
@@ -18,7 +18,7 @@ const {
   isDark = false,
   isActive = false,
   isHover = false,
-  primaryColor = '#1890ff',
+  primaryColor = ColorMap.primaryColor,
   bgColor = ['#ffffff', '#18181c'],
   hoverBgColor = ['#dee1e6', '#2D2D2D'],
   mixColor = ['#ffffff', '#000000'],

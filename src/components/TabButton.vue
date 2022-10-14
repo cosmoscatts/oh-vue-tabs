@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed, unref } from 'vue'
-import TagButtonClose from './TagButtonClose.vue'
-import { addColorAlpha, useBoolean } from '~/composables'
-import { EnumSoftTagBar as Enum } from '~/enum'
+import { computed } from 'vue'
+import Close from './Close.vue'
+import { addColorAlpha, useBoolean, ColorMap } from '~/composables'
 
 interface Props {
   isDark?: boolean
@@ -18,26 +17,28 @@ const {
   isDark = false,
   isActive = false,
   closable = true,
-  primaryColor = Enum.primaryColor,
-  borderColor = Enum.borderColor,
-  borderDarkColor = Enum.borderDarkColor,
+  primaryColor = ColorMap.primaryColor,
+  borderColor = ColorMap.borderColor,
+  borderDarkColor = ColorMap.borderDarkColor,
   inverted = false,
 } = defineProps<Props>()
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
-const isTagActive = computed(() => isActive || unref(isHover))
-const tagStyle = computed(() => {
+
+const isTabActive = computed(() => isActive || isHover.value)
+
+const tabStyle = computed(() => {
   if (!inverted) {
     const style: Record<string, string> = {
-      borderColor: unref(isTagActive)
+      borderColor: isTabActive.value
         ? addColorAlpha(primaryColor, 0.3)
         : isDark
           ? borderDarkColor
           : borderColor,
     }
 
-    if (unref(isTagActive))
+    if (isTabActive.value)
       style.color = primaryColor
 
     if (isActive)
@@ -50,12 +51,13 @@ const tagStyle = computed(() => {
       color: 'white',
       backgroundColor: isActive
         ? primaryColor
-        : unref(isHover)
+        : isHover.value
           ? addColorAlpha(primaryColor, 0.75)
           : addColorAlpha(primaryColor, 0.5),
     }
   }
 })
+
 function handleClose(e: MouseEvent) {
   e.stopPropagation()
   emit('close')
@@ -64,9 +66,10 @@ function handleClose(e: MouseEvent) {
 
 <template>
   <div
-    relative flex-inline justify-center items-center
-    h-30px px-14px rounded-2px cursor-pointer
-    :style="tagStyle"
+    relative h-30px 
+    flex-inline justify-center items-center
+    px-14px rounded-2px cursor-pointer
+    :style="tabStyle"
     :class="{ 'border-1 border-solid': !inverted }"
     @mouseenter="setTrue"
     @mouseleave="setFalse"
@@ -74,9 +77,9 @@ function handleClose(e: MouseEvent) {
     <span>
       <slot />
     </span>
-    <TagButtonClose
+    <Close
       v-if="closable" pl-10px
-      :is-active="isTagActive"
+      :is-active="isTabActive"
       :inverted="inverted"
       :active-color="primaryColor"
       @click="handleClose"

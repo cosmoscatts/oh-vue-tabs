@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { EnumSoftTagBar as Enum } from '~/enum'
-import { useBoolean } from '~/composables'
+import { useBoolean, ColorMap } from '~/composables'
 
 interface Props {
   isActive?: boolean
@@ -12,8 +11,8 @@ interface Props {
 
 const {
   isActive = false,
-  activeColor = Enum.primaryColor,
-  defaultColor = Enum.defaultIconColor,
+  activeColor = ColorMap.primaryColor,
+  defaultColor = ColorMap.defaultIconColor,
   inverted = false,
 } = defineProps<Props>()
 

@@ -1,39 +1,7 @@
-import type { Ref } from 'vue'
-import { ref, unref } from 'vue'
 
 import { colord, extend } from 'colord'
 import mixPlugin from 'colord/plugins/mix'
 import type { HsvColor } from 'colord'
-
-type maybeRef<T> = T | Ref<T>
-
-export function useBoolean(initValue: maybeRef<boolean> = false) {
-  const bool = ref(initValue)
-
-  function setBool(value: maybeRef<boolean>) {
-    bool.value = unref(value)
-  }
-
-  function setTrue() {
-    setBool(true)
-  }
-
-  function setFalse() {
-    setBool(false)
-  }
-
-  function toggle() {
-    setBool(!unref(bool))
-  }
-
-  return {
-    bool,
-    setBool,
-    setTrue,
-    setFalse,
-    toggle,
-  }
-}
 
 extend([mixPlugin])
 
@@ -48,10 +16,11 @@ const lightColorCount = 5
 const darkColorCount = 4
 
 /**
- * 根据颜色获取调色板颜色(从左至右颜色从浅到深，6为主色号)
+ * 根据颜色获取调色板颜色(从左至右颜色从浅到深，6 为主色号)
  * @param color - 颜色
  * @param index - 调色板的对应的色号(6为主色号)
- * @description 算法实现从ant-design调色板算法中借鉴 https://github.com/ant-design/ant-design/blob/master/components/style/color/colorPalette.less
+ * @description 算法实现从 ant-design 调色板算法中借鉴 
+ * @see https://github.com/ant-design/ant-design/blob/master/components/style/color/colorPalette.less
  */
 export function getColorPalette(color: string, index: ColorIndex) {
   if (index === 6)
@@ -75,14 +44,14 @@ export function getColorPalette(color: string, index: ColorIndex) {
  * @param color - 颜色
  */
 export function getAllColorPalette(color: string) {
-  const indexs: ColorIndex[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  return indexs.map(index => getColorPalette(color, index))
+  const indexArray: ColorIndex[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  return indexArray.map(index => getColorPalette(color, index))
 }
 
 /**
  * 获取色相渐变
- * @param hsv - hsv格式颜色值
- * @param i - 与6的相对距离
+ * @param hsv - hsv 格式颜色值
+ * @param i - 与 6 的相对距离
  * @param isLight - 是否是亮颜色
  */
 function getHue(hsv: HsvColor, i: number, isLight: boolean) {
@@ -175,4 +144,3 @@ export function addColorAlpha(color: string, alpha: number) {
 export function useMixinColor(firstColor: string, secondColor: string, ratio: number) {
   return colord(firstColor).mix(secondColor, ratio).toHex()
 }
-

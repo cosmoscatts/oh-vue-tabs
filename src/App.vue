@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, unref } from 'vue'
-import TagDefault from '~/components/TagDefault.vue'
-import TagChrome from '~/components/TagChrome.vue'
+import TabButton from '~/components/TabButton.vue'
+import TabChrome from '~/components/TabChrome.vue'
 
 const dark = ref(false)
 
@@ -11,7 +11,7 @@ function handleDarkMode() {
 </script>
 
 <template>
-  <div class="h-full p-24px text-14px bg-#f6f9f8" :class="{ '!bg-#101014 text-light': dark }">
+  <div class="h-full p-24px text-18px bg-#f6f9f8" :class="{ '!bg-#101014 text-light': dark }">
     <div>
       <span class="pr-24px text-24px font-bold">暗黑模式</span>
       <input type="checkbox" :checked="dark" @change="handleDarkMode">
@@ -20,45 +20,40 @@ function handleDarkMode() {
       ButtonTab
     </h3>
     <div class="tab-shadow pl-16px py-8px bg-white" :class="{ '!bg-dark text-white': dark }">
-      <TagDefault :is-dark="dark">
+      <TabButton :is-dark="dark">
         default
-      </TagDefault>
-      <TagDefault :is-dark="dark" :is-active="true" class="ml-12px">
+      </TabButton>
+      <TabButton :is-dark="dark" :is-active="true" class="ml-12px">
         active
-      </TagDefault>
-      <TagDefault :is-dark="dark" class="ml-12px">
+      </TabButton>
+      <TabButton :is-dark="dark" class="ml-12px">
         no-close
-      </TagDefault>
+      </TabButton>
     </div>
     <div class="tab-shadow px-8px py-8px mt-12px bg-white" :class="{ '!bg-dark text-white': dark }">
-      <TagChrome mode="default" :is-dark="dark" primary-color="#5856D6">
+      <TabChrome mode="default" :is-dark="dark" primary-color="#5856D6">
         default
-      </TagChrome>
-      <TagChrome :is-dark="dark" primary-color="#5856D6">
+      </TabChrome>
+      <TabChrome :is-dark="dark" primary-color="#5856D6">
         active
-      </TagChrome>
-      <TagChrome :is-dark="dark" primary-color="#5856D6" :closable="false">
+      </TabChrome>
+      <TabChrome :is-dark="dark" primary-color="#5856D6" :closable="false">
         no-close
-      </TagChrome>
-      <TagChrome :is-dark="dark" primary-color="#5856D6" :is-active="true">
+      </TabChrome>
+      <TabChrome :is-dark="dark" primary-color="#5856D6" :is-active="true">
         active
-      </TagChrome>
-      <TagChrome :is-dark="dark" primary-color="#5856D6">
+      </TabChrome>
+      <TabChrome :is-dark="dark" primary-color="#5856D6">
         active
-      </TagChrome>
-      <TagChrome :is-dark="dark" primary-color="#5856D6" :is-last="true">
+      </TabChrome>
+      <TabChrome :is-dark="dark" primary-color="#5856D6" :is-last="true">
         active
-      </TagChrome>
+      </TabChrome>
     </div>
   </div>
 </template>
 
-<style>
-html,
-body,
-#app {
-  height: 100%;
-}
+<style scoped>
 .tab-shadow {
   box-shadow: 0 1px 2px rgb(0 21 41 / 8%);
 }

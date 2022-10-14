@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@iconify/json': ^2.1.121
-  '@types/node': ^18.8.5
+  '@types/node': 18.8.0
   '@unocss/preset-icons': ^0.45.29
   '@unocss/preset-wind': ^0.45.29
   '@unocss/reset': ^0.45.29
@@ -22,7 +22,7 @@ dependencies:
 
 devDependencies:
   '@iconify/json': registry.npmmirror.com/@iconify/json/2.1.121
-  '@types/node': registry.npmmirror.com/@types/node/18.8.5
+  '@types/node': registry.npmmirror.com/@types/node/18.8.0
   '@unocss/preset-icons': registry.npmmirror.com/@unocss/preset-icons/0.45.29
   '@unocss/preset-wind': registry.npmmirror.com/@unocss/preset-wind/0.45.29
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.1.2_vite@3.1.8+vue@3.2.40
@@ -343,10 +343,10 @@ packages:
     version: 12.20.24
     dev: true
 
-  registry.npmmirror.com/@types/node/18.8.5:
-    resolution: {integrity: sha512-Bq7G3AErwe5A/Zki5fdD3O6+0zDChhg671NfPjtIcbtzDNZTv4NPKMRFr7gtYPG7y+B8uTiNK4Ngd9T0FTar6Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.8.5.tgz}
+  registry.npmmirror.com/@types/node/18.8.0:
+    resolution: {integrity: sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.8.0.tgz}
     name: '@types/node'
-    version: 18.8.5
+    version: 18.8.0
     dev: true
 
   registry.npmmirror.com/@unocss/astro/0.45.29_vite@3.1.8:

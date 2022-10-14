@@ -1,27 +1,27 @@
-import TagChrome from './components/TagChrome.vue'
-import TagDefault from './components/TagDefault.vue'
+import TabButton from './components/TabButton.vue'
+import TabChrome from './components/TabChrome.vue'
 
 export {
-  TagChrome,
-  TagDefault,
+  TabButton,
+  TabChrome,
 }
 
-type FillColor = [string, string]
-type MixRatio = [number, number]
+export type FillColor = [string, string]
+export type MixRatio = [number, number]
 
-interface TagProps {
+interface TabProps {
   isDark?: boolean
   isActive?: boolean
   primaryColor?: string
   closable?: boolean
 }
 
-export interface TagDefaultProps extends TagProps {
+export interface TabButtonProps extends TabProps {
   borderColor?: string
   borderDarkColor?: string
 }
 
-export interface TagChromeProps extends TagProps {
+export interface TabChromeProps extends TabProps {
   bgColor?: FillColor
   hoverBgColor?: FillColor
   mixColor?: FillColor

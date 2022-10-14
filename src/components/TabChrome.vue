@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import TagButtonClose from './TagButtonClose.vue'
-import TagChromeShape from './TagChromeShape.vue'
+import Close from './Close.vue'
+import ChromeShape from './ChromeShape.vue'
 import { useBoolean } from '~/composables'
-import type { FillColor, MixRatio } from '~/types'
+import type { FillColor, MixRatio } from '~/index'
 
 interface Props {
   isDark?: boolean
@@ -45,7 +45,7 @@ function handleClose(e: MouseEvent) {
     @mouseleave="setFalse"
   >
     <div absolute left-0 bottom-0 h-full w-full of-hidden>
-      <TagChromeShape
+      <ChromeShape
         :is-dark="isDark"
         :is-active="isActive"
         :is-hover="isHover"
@@ -60,7 +60,7 @@ function handleClose(e: MouseEvent) {
       <slot />
     </span>
     <div v-if="closable" pl-18px>
-      <TagButtonClose :is-active="isActive" :active-color="primaryColor" @click="handleClose" />
+      <Close :is-active="isActive" :active-color="primaryColor" @click="handleClose" />
     </div>
     <div
       absolute right="[-2px]" z-2 w-20px scale-x-5 h-16px bg="[#1f2225]" op-100 transition="opacity 0.3s ease-in-out"

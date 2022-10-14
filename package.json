@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.1.121",
-    "@types/node": "^18.8.5",
+    "@types/node": "18.8.0",
     "@unocss/preset-icons": "^0.45.29",
     "@unocss/preset-wind": "^0.45.29",
     "@vitejs/plugin-vue": "^3.1.2",
