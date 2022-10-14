@@ -36,7 +36,6 @@ export default defineConfig(configEnv => {
         },
       }),
       Unocss({
-        mode: 'dist-chunk',
         presets: [
           presetAttributify(),
           presetUno(),
