@@ -28,5 +28,3 @@ export interface TabChromeProps extends TabProps {
   mixRatio?: MixRatio
   isLast?: boolean
 }
-
-

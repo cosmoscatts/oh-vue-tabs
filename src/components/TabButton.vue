@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import Close from './Close.vue'
-import { addColorAlpha, useBoolean, ColorMap } from '~/composables'
+import { ColorMap, addColorAlpha, useBoolean } from '~/composables'
 
 interface Props {
   isDark?: boolean
@@ -25,9 +25,7 @@ const {
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
-
 const isTabActive = computed(() => isActive || isHover.value)
-
 const tabStyle = computed(() => {
   if (!inverted) {
     const style: Record<string, string> = {
@@ -37,16 +35,12 @@ const tabStyle = computed(() => {
           ? borderDarkColor
           : borderColor,
     }
-
-    if (isTabActive.value)
-      style.color = primaryColor
-
-    if (isActive)
+    if (isTabActive.value) style.color = primaryColor
+    if (isActive) {
       style.backgroundColor = addColorAlpha(primaryColor, isDark ? 0.15 : 0.1)
-
+    }
     return style
-  }
-  else {
+  } else {
     return {
       color: 'white',
       backgroundColor: isActive
@@ -57,20 +51,23 @@ const tabStyle = computed(() => {
     }
   }
 })
-
-function handleClose(e: MouseEvent) {
+const handleClose = (e: MouseEvent) => {
   e.stopPropagation()
   emit('close')
 }
 </script>
 
 <template>
-  <div relative h-30px flex-inline justify-center items-center px-14px rounded-2px cursor-pointer :style="tabStyle"
-    :class="{ 'border-1 border-solid': !inverted }" @mouseenter="setTrue" @mouseleave="setFalse">
+  <div
+    relative h-30px flex-inline justify-center items-center px-14px rounded-2px cursor-pointer :style="tabStyle"
+    :class="{ 'border-1 border-solid': !inverted }" @mouseenter="setTrue" @mouseleave="setFalse"
+  >
     <span>
       <slot />
     </span>
-    <Close v-if="closable" pl-10px :is-active="isTabActive" :inverted="inverted" :active-color="primaryColor"
-      @click="handleClose" />
+    <Close
+      v-if="closable" pl-10px :is-active="isTabActive" :inverted="inverted" :active-color="primaryColor"
+      @click="handleClose"
+    />
   </div>
 </template>

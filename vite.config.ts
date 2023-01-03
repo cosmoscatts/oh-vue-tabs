@@ -12,16 +12,13 @@ import {
 
 export default defineConfig(configEnv => {
   const viteEnv = loadEnv(configEnv.mode, `.env.${configEnv.mode}`)
-
   const isNetlify = viteEnv.VITE_IS_NETLIFY === '1'
-
   return {
     resolve: {
       alias: {
         '~/': `${resolve(__dirname, 'src')}/`,
       },
     },
-
     plugins: [
       Vue({
         reactivityTransform: true,
@@ -54,11 +51,8 @@ export default defineConfig(configEnv => {
         },
       }),
     ],
-
     build: isNetlify
-      ? {
-        brotliSize: false
-      }
+      ? { brotliSize: false }
       : {
         lib: {
           entry: resolve(__dirname, 'src/index.ts'),

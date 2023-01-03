@@ -1,33 +1,26 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import TabButton from '~/components/TabButton.vue'
 import TabChrome from '~/components/TabChrome.vue'
 
 const isDark = ref(false)
-
+const toggleDark = () => isDark.value = !isDark.value
 const setMode2Body = (mode: boolean) => {
-  if (mode)
-    document.querySelector('html')!.setAttribute('class', 'dark')
+  if (mode) document.querySelector('html')!.setAttribute('class', 'dark')
   else document.querySelector('html')!.removeAttribute('class')
 }
-
 watch(isDark, setMode2Body)
-
-const toggleDark = () => isDark.value = !isDark.value
 
 const THEME_COLORS = [
   '#377BB5',
   '#CA3832',
   '#EE8732',
   '#9C5BDE',
-  '#43912B'
+  '#43912B',
 ]
 const pickedColorId = ref(0)
 const pickedColor = computed(() => THEME_COLORS[pickedColorId.value])
-
-function pickColor(colorId: number) {
-  pickedColorId.value = colorId
-}
+const pickColor = (colorId: number) => pickedColorId.value = colorId
 </script>
 
 <template>
@@ -37,26 +30,34 @@ function pickColor(colorId: number) {
         Oh Vue Tabs
       </h1>
       <div flex-auto />
-      <a icon-btn i-carbon-logo-github href="https://github.com/cosmoscatts/oh-vue-tabs" target="_blank"
-        title="GitHub" />
+      <a
+        icon-btn i-carbon-logo-github href="https://github.com/cosmoscatts/oh-vue-tabs" target="_blank"
+        title="GitHub"
+      />
       <button icon-btn i-carbon-sun dark:i-carbon-moon @click="toggleDark" />
     </div>
 
     <div flex items-center h-50px mt-20px>
-      <h2 font-bold text-2xl>Colors</h2>
+      <h2 font-bold text-2xl>
+        Colors
+      </h2>
       <ul flex justify-between gap-x-4 ml-40px>
-        <li v-for="(color, i) in THEME_COLORS" :key="`${i}-color`" w-6 h-6 rounded text-white cursor-pointer
-          :style="{ backgroundColor: color }" @click="pickColor(i)">
+        <li
+          v-for="(color, i) in THEME_COLORS" :key="`${i}-color`" w-6 h-6 rounded text-white cursor-pointer
+          :style="{ backgroundColor: color }" @click="pickColor(i)"
+        >
           <div v-show="pickedColorId === i" w-full h-full flex justify-center items-center>
             <svg width="1em" height="1em" viewBox="0 0 32 32">
-              <path fill="currentColor" d="m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9L13 24z"></path>
+              <path fill="currentColor" d="m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9L13 24z" />
             </svg>
           </div>
         </li>
       </ul>
     </div>
 
-    <h2 text-2xl font-bold mt-30px>Button Tabs</h2>
+    <h2 text-2xl font-bold mt-30px>
+      Button Tabs
+    </h2>
     <div class="tab" bg="white dark:dark" flex items-center gap-x-3>
       <TabButton :is-dark="isDark" :primary-color="pickedColor">
         default
@@ -75,7 +76,9 @@ function pickColor(colorId: number) {
       </TabButton>
     </div>
 
-    <h2 text-2xl font-bold mt-30px>Chrome Tabs</h2>
+    <h2 text-2xl font-bold mt-30px>
+      Chrome Tabs
+    </h2>
     <div class="tab" bg="white dark:dark">
       <TabChrome :is-dark="isDark" :bg-color="['#ffffff', '#222222']" :primary-color="pickedColor">
         default

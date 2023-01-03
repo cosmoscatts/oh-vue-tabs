@@ -27,4 +27,3 @@ export const ColorMap = {
   chromeHoverBgColor: ['#dee1e6', '#2D2D2D'],
   chromeMixColor: ['#ffffff', '#000000'],
 }
-
