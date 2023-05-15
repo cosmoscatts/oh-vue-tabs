@@ -18,7 +18,7 @@ const darkColorCount = 4
  * 根据颜色获取调色板颜色(从左至右颜色从浅到深，6 为主色号)
  * @param color - 颜色
  * @param index - 调色板的对应的色号(6为主色号)
- * @description 算法实现从 ant-design 调色板算法中借鉴 
+ * @description 算法实现从 ant-design 调色板算法中借鉴
  * @see https://github.com/ant-design/ant-design/blob/master/components/style/color/colorPalette.less
  */
 export function getColorPalette(color: string, index: ColorIndex) {
