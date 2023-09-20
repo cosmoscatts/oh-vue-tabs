@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
@@ -7,13 +7,14 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
-  presetWind
+  presetWind,
 } from 'unocss'
 
-export default defineConfig(configEnv => {
+export default defineConfig((configEnv) => {
   const viteEnv = loadEnv(configEnv.mode, `.env.${configEnv.mode}`)
   const isNetlify = viteEnv.VITE_IS_NETLIFY === '1'
   return {
+    base: './',
     resolve: {
       alias: {
         '~/': `${resolve(__dirname, 'src')}/`,
@@ -54,20 +55,19 @@ export default defineConfig(configEnv => {
     build: isNetlify
       ? { brotliSize: false }
       : {
-        lib: {
-          entry: resolve(__dirname, 'src/index.ts'),
-          name: 'OhVueTabs',
-          fileName: 'index'
+          lib: {
+            entry: resolve(__dirname, 'src/index.ts'),
+            name: 'OhVueTabs',
+            fileName: 'index',
+          },
+          rollupOptions: {
+            external: ['vue'],
+            output: {
+              globals: {
+                vue: 'Vue',
+              },
+            },
+          },
         },
-        rollupOptions: {
-          external: ['vue'],
-          output: {
-            globals: {
-              vue: 'Vue'
-            }
-          }
-        }
-      }
   }
 })
-
