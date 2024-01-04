@@ -23,5 +23,5 @@ pnpm i @cosmoscatts/oh-vue-tabs
 引入组件
 
 ```ts
-import { TabChrome, TabButton } from '@cosmoscatts/oh-vue-tabs'
+import { TabButton, TabChrome } from '@cosmoscatts/oh-vue-tabs'
 ```

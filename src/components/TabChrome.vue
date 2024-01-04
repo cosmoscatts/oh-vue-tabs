@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import Close from './Close.vue'
 import ChromeShape from './ChromeShape.vue'
 import { ColorMap, useBoolean } from '~/composables'
@@ -30,10 +31,18 @@ const {
 const emit = defineEmits(['close'])
 
 const { bool: isHover, setTrue, setFalse } = useBoolean()
-const handleClose = (e: MouseEvent) => {
+function handleClose(e: MouseEvent) {
   e.stopPropagation()
   emit('close')
 }
+
+const textStyle = computed(() => {
+  const style = {} as Record<string, string>
+  if (isActive) {
+    style.color = primaryColor
+  }
+  return style
+})
 </script>
 
 <template>
@@ -47,7 +56,7 @@ const handleClose = (e: MouseEvent) => {
         :bg-color="bgColor" :hover-bg-color="hoverBgColor" :mix-color="mixColor" :mix-ratio="mixRatio"
       />
     </div>
-    <span relative z-2 whitespace-nowrap>
+    <span relative z-2 whitespace-nowrap :style="textStyle">
       <slot />
     </span>
     <div v-if="closable" pl-18px>

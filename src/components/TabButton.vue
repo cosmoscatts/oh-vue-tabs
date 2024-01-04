@@ -40,7 +40,8 @@ const tabStyle = computed(() => {
       style.backgroundColor = addColorAlpha(primaryColor, isDark ? 0.15 : 0.1)
     }
     return style
-  } else {
+  }
+  else {
     return {
       color: 'white',
       backgroundColor: isActive
@@ -51,7 +52,7 @@ const tabStyle = computed(() => {
     }
   }
 })
-const handleClose = (e: MouseEvent) => {
+function handleClose(e: MouseEvent) {
   e.stopPropagation()
   emit('close')
 }

@@ -5,7 +5,7 @@ import TabChrome from '~/components/TabChrome.vue'
 
 const isDark = ref(false)
 const toggleDark = () => isDark.value = !isDark.value
-const setMode2Body = (mode: boolean) => {
+function setMode2Body(mode: boolean) {
   if (mode) document.querySelector('html')!.setAttribute('class', 'dark')
   else document.querySelector('html')!.removeAttribute('class')
 }
